@@ -1,5 +1,6 @@
 import FactoryMethod.Shape;
 import FactoryMethod.ShapeFactory;
+import Singleton.MyNote;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -16,5 +17,9 @@ public class App {
         square.draw();
 
         //////////////////////////////////////////////////////// 1-2 Singleton Test
+        MyNote instance = MyNote.getInstance("희은이 점유 중");
+        MyNote instance2 = MyNote.getInstance("희은2가 점유 중");
+        instance.printMsg();
+        instance2.printMsg();
     }
 }
