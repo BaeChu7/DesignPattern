@@ -1,16 +1,16 @@
-import Adapter.Adapter;
-import Adapter.AirConditioner;
-import Adapter.HairDryer;
-import Adapter.Volt110;
-import Decorator.BaseComponent;
-import Decorator.Component;
-import Decorator.Milk;
-import Decorator.Water;
-import FactoryMethod.Shape;
-import FactoryMethod.ShapeFactory;
-import Singleton.MyNote;
-import TemplateMethod.Heeeun;
-import TemplateMethod.Eunhee;
+import com.heeeun.designpattern.adapter.Adapter;
+import com.heeeun.designpattern.adapter.AirConditioner;
+import com.heeeun.designpattern.adapter.HairDryer;
+import com.heeeun.designpattern.adapter.Volt110;
+import com.heeeun.designpattern.decorator.BaseComponent;
+import com.heeeun.designpattern.decorator.Component;
+import com.heeeun.designpattern.decorator.Milk;
+import com.heeeun.designpattern.decorator.Water;
+import com.heeeun.designpattern.factorymethod.Shape;
+import com.heeeun.designpattern.factorymethod.ShapeFactory;
+import com.heeeun.designpattern.singleton.MyNote;
+import com.heeeun.designpattern.templatemethod.Eunhee;
+import com.heeeun.designpattern.templatemethod.Heeeun;
 
 public class App {
     public static void main(String[] args) throws Exception {
