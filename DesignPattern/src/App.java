@@ -9,10 +9,12 @@ import Decorator.Water;
 import FactoryMethod.Shape;
 import FactoryMethod.ShapeFactory;
 import Singleton.MyNote;
+import TemplateMethod.Heeeun;
+import TemplateMethod.Eunhee;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        //////////////////////////////////////////////////////// 1-1 Factory Method Test
+        System.out.println("//////////////////////////////////////////////////////// 1-1 Factory Method Test");
         // 팩토리 클래스에서 객체 생성 후 반환
         ShapeFactory shapeFactory = new ShapeFactory();
 
@@ -24,13 +26,13 @@ public class App {
         Shape square = shapeFactory.getShape("SQUARE");
         square.draw();
 
-        //////////////////////////////////////////////////////// 1-2 Singleton Test
+        System.out.println("//////////////////////////////////////////////////////// 1-2 Singleton Test");
         MyNote instance = MyNote.getInstance("Heeeun is occupying the note...");
-        MyNote instance2 = MyNote.getInstance("Heeeun2 is occupying the note...");
+        MyNote instance2 = MyNote.getInstance("Eunhee is occupying the note...");
         instance.printMsg();
         instance2.printMsg();
 
-        /////////////////////////////////////////////////////// 2-1 Adapter Test
+        System.out.println("//////////////////////////////////////////////////////// 2-1 Adapter Test");
         HairDryer hairDryer = new HairDryer();
         connect(hairDryer);
 
@@ -38,16 +40,26 @@ public class App {
         // connect(airConditioner);
         Volt110 airConditioner110 = new Adapter(airConditioner);
         connect(airConditioner110);
-        
-        /////////////////////////////////////////////////////// 2-2 Decorator Test
+
+        System.out.println("//////////////////////////////////////////////////////// 2-2 Decorator Test");
         Component espresso = new BaseComponent();
         System.out.println("Espresso's recipes : " + espresso.add());
 
         Component americano = new Water(new BaseComponent()); // Decorator 생성자 -> Water 생성자
-        System.out.println("Americano's recipes : " + americano.add()); // BaseComponent add -> Decorator add -> Water add
-        
+        System.out.println("Americano's recipes : " + americano.add()); // BaseComponent add -> Decorator add -> Water
+                                                                        // add
+
         Component latte = new Milk(new Water(new BaseComponent()));
         System.out.println("Latte's recipes : " + latte.add());
+
+        System.out.println("//////////////////////////////////////////////////////// 3-1 Template Method Test");
+        Heeeun heeeun = new Heeeun();
+        heeeun.Alive();
+        Eunhee heeeun2 = new Eunhee();
+        heeeun2.Alive();
+
+        System.out.println("//////////////////////////////////////////////////////// 3-2 Observer Test");
+
     }
 
     // 콘센트에 연결
