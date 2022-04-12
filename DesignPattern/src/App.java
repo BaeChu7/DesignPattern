@@ -8,6 +8,11 @@ import com.heeeun.designpattern.decorator.Milk;
 import com.heeeun.designpattern.decorator.Water;
 import com.heeeun.designpattern.factorymethod.Shape;
 import com.heeeun.designpattern.factorymethod.ShapeFactory;
+import com.heeeun.designpattern.observer.Applicants;
+import com.heeeun.designpattern.observer.Karam;
+import com.heeeun.designpattern.observer.Kildong;
+import com.heeeun.designpattern.observer.Minsu;
+import com.heeeun.designpattern.observer.Sfa;
 import com.heeeun.designpattern.singleton.MyNote;
 import com.heeeun.designpattern.templatemethod.Eunhee;
 import com.heeeun.designpattern.templatemethod.Heeeun;
@@ -59,7 +64,15 @@ public class App {
         heeeun2.Alive();
 
         System.out.println("//////////////////////////////////////////////////////// 3-2 Observer Test");
+        Sfa sfa = new Sfa();
+        Applicants kildong = new Kildong();
+        Applicants minsu = new Minsu();
+        Applicants karam = new Karam();
 
+        sfa.Pass(karam);
+        sfa.Pass(minsu);
+
+        sfa.notifyApplicant("SFA 에 합격하셨습니다.");
     }
 
     // 콘센트에 연결
