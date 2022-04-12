@@ -2,6 +2,10 @@ import Adapter.Adapter;
 import Adapter.AirConditioner;
 import Adapter.HairDryer;
 import Adapter.Volt110;
+import Decorator.BaseComponent;
+import Decorator.Component;
+import Decorator.Milk;
+import Decorator.Water;
 import FactoryMethod.Shape;
 import FactoryMethod.ShapeFactory;
 import Singleton.MyNote;
@@ -34,6 +38,16 @@ public class App {
         // connect(airConditioner);
         Volt110 airConditioner110 = new Adapter(airConditioner);
         connect(airConditioner110);
+        
+        /////////////////////////////////////////////////////// 2-2 Decorator Test
+        Component espresso = new BaseComponent();
+        System.out.println("Espresso's recipes : " + espresso.add());
+
+        Component americano = new Water(new BaseComponent()); // Decorator 생성자 -> Water 생성자
+        System.out.println("Americano's recipes : " + americano.add()); // BaseComponent add -> Decorator add -> Water add
+        
+        Component latte = new Milk(new Water(new BaseComponent()));
+        System.out.println("Latte's recipes : " + latte.add());
     }
 
     // 콘센트에 연결
