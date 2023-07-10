@@ -2,7 +2,8 @@
 //#region import
 import java.lang.reflect.Constructor;
 
-import com.heeeun.GoF.DesignPattern.singleton.Settings;
+import com.heeeun.GoF.DesignPattern._01_singleton.Settings;
+import com.heeeun.GoF.DesignPattern._01_singleton.Settings2;
 import com.heeeun.designpattern.adapter.Adapter;
 import com.heeeun.designpattern.adapter.AirConditioner;
 import com.heeeun.designpattern.adapter.HairDryer;

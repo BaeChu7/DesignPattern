@@ -1,4 +1,4 @@
-package com.heeeun.GoF.DesignPattern.singleton;
+package com.heeeun.GoF.DesignPattern._01_singleton;
 
 public class Settings {
     // 쓰레드 세이프한 환경을 만드는 법
