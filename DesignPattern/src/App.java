@@ -1,4 +1,9 @@
+
 //#region import
+import java.lang.reflect.Constructor;
+
+import com.heeeun.GoF.DesignPattern._01_singleton.Settings;
+import com.heeeun.GoF.DesignPattern._01_singleton.Settings2;
 import com.heeeun.designpattern.adapter.Adapter;
 import com.heeeun.designpattern.adapter.AirConditioner;
 import com.heeeun.designpattern.adapter.HairDryer;
@@ -74,6 +79,39 @@ public class App {
         sfa.Pass(minsu);
 
         sfa.notifyApplicant("SFA 에 합격하셨습니다.");
+
+        ///////////////////////////////////////////// 인프런 강의
+        Settings settings = Settings.getInstanace();
+
+        // 싱글턴 패턴을 깨트리는 방법1
+        Constructor<Settings> constructor = Settings.class.getDeclaredConstructor();
+        constructor.setAccessible(true);
+        Settings settings1 = constructor.newInstance();
+
+        // 서로 다른 setting를 바라볼 수 있음. -> 조심하자~
+        System.out.println(settings == settings1);
+
+        // ENUM 은 리플렉션이 안 먹히기 때문에 싱글턴 패턴 가능
+        // 진정한 싱글턴 패턴 구현 가능
+        // 직렬화 settings2, 역직렬화 settings22가 안전하게 가능하다
+        // 그러나 상속을 쓸 수 없다.
+        Settings2 settings2 = Settings2.INSTANCE;
+        Settings2 settings22 = null;
+
+        // Constructor<?>[] declaredConstructors =
+        // Settings2.class.getDeclaredConstructors();
+        // for (Constructor<?> constructor2 : declaredConstructors) {
+        // constructor2.setAccessible(true);
+        // settings22 = (Settings2) constructor2.newInstance("INSTANCE");
+        // }
+
+        // System.out.println(settings2 == settings22); // Cannot reflectively create
+        // enum objects 에러 발생
+
+        // 싱글턴 예시1
+        // Runtime runtime = new Runtime();
+        Runtime runtime = Runtime.getRuntime();
+
     }
 
     // 콘센트에 연결
