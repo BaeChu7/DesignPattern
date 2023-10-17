@@ -54,9 +54,8 @@ public class App {
 
         Component americano = new Water(new BaseComponent()); // Decorator 생성자 -> Water 생성자
         System.out.println("Americano's recipes : " + americano.add()); // BaseComponent add -> Decorator add -> Water
-                                                                        // add
-
-        Component latte = new Milk(new Water(new BaseComponent()));
+                           
+        Component latte = new Milk(americano);
         System.out.println("Latte's recipes : " + latte.add());
 
         System.out.println("//////////////////////////////////////////////////////// 3-1 Template Method Test");
@@ -71,7 +70,7 @@ public class App {
         Applicants minsu = new Minsu();
         Applicants karam = new Karam();
 
-        sfa.Pass(karam);
+        sfa.Pass(kildong);
         sfa.Pass(minsu);
 
         sfa.notifyApplicant("SFA 에 합격하셨습니다.");
