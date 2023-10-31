@@ -2,25 +2,24 @@
 //#region import
 import java.lang.reflect.Constructor;
 
-import com.heeeun.designpattern.adapter.Adapter;
-import com.heeeun.designpattern.adapter.AirConditioner;
-import com.heeeun.designpattern.adapter.HairDryer;
-import com.heeeun.designpattern.adapter.Volt110;
-import com.heeeun.designpattern.decorator.BaseComponent;
-import com.heeeun.designpattern.decorator.Component;
-import com.heeeun.designpattern.decorator.Milk;
-import com.heeeun.designpattern.decorator.Water;
-import com.heeeun.designpattern.factorymethod.Shape;
-import com.heeeun.designpattern.factorymethod.ShapeFactory;
-import com.heeeun.designpattern.observer.Applicants;
-import com.heeeun.designpattern.observer.Karam;
-import com.heeeun.designpattern.observer.Kildong;
-import com.heeeun.designpattern.observer.Minsu;
-import com.heeeun.designpattern.observer.Sfa;
-import com.heeeun.designpattern.singleton.MyNote;
-import com.heeeun.designpattern.templatemethod.Eunhee;
-import com.heeeun.designpattern.templatemethod.Heeeun;
-//#endregion
+import com.heeeun.designpattern.behavioral_patterns.observer.Applicants;
+import com.heeeun.designpattern.behavioral_patterns.observer.Karam;
+import com.heeeun.designpattern.behavioral_patterns.observer.Kildong;
+import com.heeeun.designpattern.behavioral_patterns.observer.Minsu;
+import com.heeeun.designpattern.behavioral_patterns.observer.Sfa;
+import com.heeeun.designpattern.behavioral_patterns.templatemethod.Eunhee;
+import com.heeeun.designpattern.behavioral_patterns.templatemethod.Heeeun;
+import com.heeeun.designpattern.creational_patterns.factorymethod.Shape;
+import com.heeeun.designpattern.creational_patterns.factorymethod.ShapeFactory;
+import com.heeeun.designpattern.creational_patterns.singleton.MyNote;
+import com.heeeun.designpattern.structural_patterns.adapter.Adapter;
+import com.heeeun.designpattern.structural_patterns.adapter.AirConditioner;
+import com.heeeun.designpattern.structural_patterns.adapter.HairDryer;
+import com.heeeun.designpattern.structural_patterns.adapter.Volt110;
+import com.heeeun.designpattern.structural_patterns.decorator.BaseComponent;
+import com.heeeun.designpattern.structural_patterns.decorator.Component;
+import com.heeeun.designpattern.structural_patterns.decorator.Milk;
+import com.heeeun.designpattern.structural_patterns.decorator.Water;
 
 public class App {
     public static void main(String[] args) throws Exception {
